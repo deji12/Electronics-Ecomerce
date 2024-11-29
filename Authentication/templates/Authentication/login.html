@@ -1,0 +1,23 @@
+﻿{% extends 'Authentication/base.html' %}
+
+{% block content %}
+
+<h3 class="title">Sign in to eTrade.</h3>
+<p class="b2 mb--55">Enter your detail below</p>
+<form class="singin-form" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" placeholder="jogndoe@example.com">
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" placeholder="123456789">
+    </div>
+    <div class="form-group d-flex align-items-center justify-content-between">
+        <button type="submit" class="axil-btn btn-bg-primary submit-btn">Sign In</button>
+        <a href="{% url 'forgot-password' %}" class="forgot-btn">Forget password?</a>
+    </div>
+</form>
+    
+{% endblock content %}
